@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native';
 import WelcomeImage from '../assets/images/welcome.jpg';
 import Button from '../Common/Button';
+import { useHistory } from 'react-router-native';
 
 const primary = '#7310FF';
 
@@ -12,7 +13,8 @@ const styles = StyleSheet.create({
     },
     imageWrapper: {
         alignItems: 'center',
-        paddingTop: 100
+        paddingTop: 100,
+        flex: 2
     },
     imageContainer: {
         height: 250,
@@ -24,7 +26,8 @@ const styles = StyleSheet.create({
     },
     captionWrapper: {
         padding: 40,
-        alignItems: 'center'
+        alignItems: 'center',
+        flex: 2
     },
     captionText: {
         fontSize: 32,
@@ -38,8 +41,9 @@ const styles = StyleSheet.create({
     buttonContainer: {
         paddingLeft: 40,
         paddingRight: 40,
-        marginTop: 40,
-        alignItems: 'center'
+        marginTop: 20,
+        alignItems: 'center',
+        flex: 1
     },
     button: {
         backgroundColor: primary,
@@ -48,7 +52,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
-        marginTop: 40,
+        marginTop: 20,
         marginBottom: 20
     },
     buttonText: {
@@ -58,8 +62,9 @@ const styles = StyleSheet.create({
 })
 
 export default function (props) {
+    const history = useHistory();
+    const userName = 'Sandeep';
 
-    const userName = 'Sandeep'
     return (
         <SafeAreaView style={styles.root}>
             <ScrollView>
@@ -79,7 +84,7 @@ export default function (props) {
                         buttonStyle={styles.button}
                         textStyle={styles.buttonText}
                         title="Back to Home"
-                        onPress={() => ''}
+                        onPress={() => history.push('/home')}
                     />
                 </View>
             </ScrollView>
