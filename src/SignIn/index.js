@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: primaryBackground,
     },
     backContainer: {
-        marginLeft: 30,
+        marginLeft: 40,
         height: 120,
         flexDirection: 'row',
         alignItems: 'center'
@@ -53,8 +53,8 @@ const styles = StyleSheet.create({
         height: height - 120 - StatusBarManager.HEIGHT || 20,
         flex: 1,
         paddingTop: 60,
-        paddingLeft: 30,
-        paddingRight: 30,
+        paddingLeft: 40,
+        paddingRight: 40,
         backgroundColor: '#FFF',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: primary,
-        width: 150,
+        width: 180,
         padding: 20,
         alignItems: 'center',
         justifyContent: 'center',

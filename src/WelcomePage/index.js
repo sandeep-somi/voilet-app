@@ -9,12 +9,12 @@ const primary = '#7310FF';
 const styles = StyleSheet.create({
     root: {
         backgroundColor: '#FFF',
-        flex: 1
+        flex: 1,
     },
     imageWrapper: {
         alignItems: 'center',
-        paddingTop: 100,
-        flex: 2
+        flex: 2,
+        justifyContent: 'center'
     },
     imageContainer: {
         height: 250,
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%'
     },
-    captionWrapper: {
-        padding: 40,
+    captionWrapper: {        
         alignItems: 'center',
-        flex: 2
+        flex: 1,
+        justifyContent: 'center'
     },
     captionText: {
         fontSize: 32,
@@ -41,9 +41,10 @@ const styles = StyleSheet.create({
     buttonContainer: {
         paddingLeft: 40,
         paddingRight: 40,
-        marginTop: 20,
         alignItems: 'center',
-        flex: 1
+        flex: 1,
+        justifyContent: 'flex-end',
+        paddingBottom: 20
     },
     button: {
         backgroundColor: primary,
@@ -66,28 +67,26 @@ export default function (props) {
     const userName = 'Sandeep';
 
     return (
-        <SafeAreaView style={styles.root}>
-            <ScrollView>
-                <View style={styles.imageWrapper}>
-                    <View style={styles.imageContainer}>
-                        <Image style={styles.image} source={WelcomeImage} />
-                    </View>
+        <View style={styles.root}>
+            <View style={styles.imageWrapper}>
+                <View style={styles.imageContainer}>
+                    <Image style={styles.image} source={WelcomeImage} />
                 </View>
-                <View style={styles.captionWrapper}>
-                    <Text style={styles.captionText}>Welcome {userName}</Text>
-                    <Text style={styles.text}>Have some problem today?</Text>
-                    <Text style={styles.text}>Don't worry, now you are part of</Text>
-                    <Text style={styles.text}>Hi Service, Let us help you.</Text>
-                </View>
-                <View style={styles.buttonContainer}>
-                    <Button
-                        buttonStyle={styles.button}
-                        textStyle={styles.buttonText}
-                        title="Back to Home"
-                        onPress={() => history.push('/home')}
-                    />
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+            </View>
+            <View style={styles.captionWrapper}>
+                <Text style={styles.captionText}>Welcome {userName}</Text>
+                <Text style={styles.text}>Have some problem today?</Text>
+                <Text style={styles.text}>Don't worry, now you are part of</Text>
+                <Text style={styles.text}>Hi Service, Let us help you.</Text>
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button
+                    buttonStyle={styles.button}
+                    textStyle={styles.buttonText}
+                    title="Back to Home"
+                    onPress={() => history.push('/home')}
+                />
+            </View>
+        </View>
     )
 }

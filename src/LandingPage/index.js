@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     intro: {
         flex: 2,
-        margin: 70,
+        margin: 40,
     },
     greetContainer: {
         height: 100,
