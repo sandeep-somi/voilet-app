@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, SafeAreaView, ScrollView } from 'react-native';
 import WelcomeImage from '../assets/images/welcome.jpg';
 import Button from '../Common/Button';
-import { useHistory } from 'react-router-native';
+import { useNavigation } from '@react-navigation/native';
 
 const primary = '#7310FF';
 
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 })
 
 export default function (props) {
-    const history = useHistory();
+    const navigation = useNavigation();
     const userName = 'Sandeep';
 
     return (
@@ -84,7 +84,7 @@ export default function (props) {
                     buttonStyle={styles.button}
                     textStyle={styles.buttonText}
                     title="Back to Home"
-                    onPress={() => history.push('/home')}
+                    onPress={() => navigation.navigate('Home')}
                 />
             </View>
         </View>

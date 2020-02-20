@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TextInput } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native';
 import UserIcon from '../assets/images/user.jpg';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
 
 const bgSecondary = '#EAE8FE';
 const headerColor = '#252D96';
@@ -98,6 +99,7 @@ const styles = StyleSheet.create({
 
 export default function (props) {
     const [search, setSearch] = useState('');
+    const navigation = useNavigation();
 
     return (
         <SafeAreaView>

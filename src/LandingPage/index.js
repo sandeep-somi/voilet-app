@@ -8,8 +8,8 @@ import {
     StatusBar,
     TouchableOpacity
 } from 'react-native';
-import { useHistory } from 'react-router-native';
 import Button from '../Common/Button';
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
     root: {
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
 })
 
 export default function (props) {
-    const history = useHistory();
-
+    const navigation = useNavigation();
+    
     return (
         <View style={styles.root}>
             <StatusBar backgroundColor="#7310FF" barStyle="light-content" />
@@ -79,7 +79,7 @@ export default function (props) {
                     buttonStyle={styles.button}
                     textStyle={styles.buttonText}
                     title="Get Started"
-                    onPress={() => history.push('/signin')}
+                    onPress={() => navigation.navigate('SignIn')}
                 />
             </View>
         </View>

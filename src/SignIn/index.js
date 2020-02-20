@@ -12,13 +12,13 @@ import {
     Image,
     BackHandler
 } from 'react-native';
-import { useHistory } from 'react-router-native';
 import GoogleIcon from '../assets/images/google.png';
 import FacebookIcon from '../assets/images/facebook.png';
 import TwitterIcon from '../assets/images/twitter.png';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Button from '../Common/Button';
 import is from 'is_js';
+import { useNavigation } from '@react-navigation/native';
 
 const { StatusBarManager } = NativeModules;
 
@@ -116,7 +116,8 @@ const styles = StyleSheet.create({
 })
 
 export default function (props) {
-    const history = useHistory();
+    const navigation = useNavigation();
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setError] = useState({ email: '', password: '' });
@@ -137,7 +138,7 @@ export default function (props) {
                 <StatusBar backgroundColor={primaryBackground} barStyle="light-content" />
                 <View style={styles.backContainer}>
                     <Icon name="long-arrow-left" style={styles.backIcon} />
-                    <Text style={styles.backText} onPress={() => history.goBack()}>Hi Fix</Text>
+                    <Text style={styles.backText} onPress={() => navigation.goBack()}>Hi Fix</Text>
                 </View>
                 <View style={styles.formContainer}>
                     <Text style={styles.welcomeText}>Here to Get</Text>
@@ -165,7 +166,7 @@ export default function (props) {
                         buttonStyle={styles.button}
                         textStyle={styles.buttonText}
                         title="Sign In"
-                        onPress={() => history.push('/welcome')}
+                        onPress={() => navigation.navigate('WelcomePage')}
                     />
                     <View style={styles.alternativeLogin}>
                         <Text style={styles.alternativeLoginText}>Or Sign in with</Text>
